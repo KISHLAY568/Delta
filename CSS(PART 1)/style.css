@@ -1,0 +1,17 @@
+a{
+    color: rgb(0,255,0);
+    text-decoration: none;
+}
+button{
+    background-color: white;
+    color: blueviolet;
+}
+textarea{
+    color: #000;
+}
+p{
+    line-height: 30px;
+}
+h1{
+    text-decoration: underline;
+}
