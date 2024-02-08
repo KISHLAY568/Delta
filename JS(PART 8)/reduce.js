@@ -3,3 +3,13 @@ let finalValue = num.reduce((res, el) => {
     return res + el;
 })
 console.log(finalValue);
+
+let max = num.reduce((res, el) => {
+    res = 5;
+    if (el > res) {
+        return el;
+    } else {
+        return res;
+    }
+})
+console.log(max);
