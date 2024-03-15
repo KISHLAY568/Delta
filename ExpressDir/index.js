@@ -12,6 +12,13 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("Hello! i am root");
 });
+app.get("/search", (req, res) => {
+  let { q } = req.query;
+  if(!q){
+    res.end("Nothing Searched");
+  }
+  res.send(`Search results for query ${q}`);
+});
 app.get("/:username/:id", (req, res) => {
   //   console.log(req.params);
   let { username, id } = req.params;
