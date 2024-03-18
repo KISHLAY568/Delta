@@ -1,0 +1,36 @@
+{
+  "cat": {
+    "username": "cats",
+    "followers": 10000,
+    "following": 500,
+    "posts": [
+      {
+        "url": "https://example.com/cat_image1.jpg",
+        "comments_count": 2,
+        "likes_count": 200
+      },
+      {
+        "url": "https://example.com/cat_image2.jpg",
+        "comments_count": 1,
+        "likes_count": 150
+      }
+    ]
+  },
+  "dog": {
+    "username": "dogs",
+    "followers": 8000,
+    "following": 300,
+    "posts": [
+      {
+        "url": "https://example.com/dog_image1.jpg",
+        "comments_count": 1,
+        "likes_count": 300
+      },
+      {
+        "url": "https://example.com/dog_image2.jpg",
+        "comments_count": 2,
+        "likes_count": 250
+      }
+    ]
+  }
+}
