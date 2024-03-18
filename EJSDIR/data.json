@@ -5,12 +5,12 @@
     "following": 500,
     "posts": [
       {
-        "url": "https://example.com/cat_image1.jpg",
+        "url": "https://i.pinimg.com/564x/36/d9/96/36d996ee4ca03de99135fb001d1aa12d.jpg",
         "comments_count": 2,
         "likes_count": 200
       },
       {
-        "url": "https://example.com/cat_image2.jpg",
+        "url": "https://i.pinimg.com/564x/46/b0/cb/46b0cbd434a32ed8e692e4f9d025839a.jpg",
         "comments_count": 1,
         "likes_count": 150
       }
@@ -22,12 +22,12 @@
     "following": 300,
     "posts": [
       {
-        "url": "https://example.com/dog_image1.jpg",
+        "url": "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "comments_count": 1,
         "likes_count": 300
       },
       {
-        "url": "https://example.com/dog_image2.jpg",
+        "url": "https://i.pinimg.com/564x/0f/15/3d/0f153dde7df00dcbf8674f820eba855a.jpg",
         "comments_count": 2,
         "likes_count": 250
       }
