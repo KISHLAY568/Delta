@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <%- include("includes/head.ejs") %>
   <body>
     <h1>This Page belongs to @<%= data.username %></h1>
@@ -17,6 +16,6 @@
       Likes : <%= post.likes_count %> &nbsp;&nbsp;&nbsp;&nbsp;Comments : <%=
       post.comments_count %>
     </p>
-    <% } %>
+    <% } %> <%- include("includes/footer.ejs") %>
   </body>
 </html>
