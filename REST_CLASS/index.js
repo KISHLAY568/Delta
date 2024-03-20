@@ -50,6 +50,12 @@ app.patch("/posts/:id", (req, res) => {
   let post = posts.find((p) => id === p.id);
   post.content = newContent;
 });
+app.get("/posts/:id/edit", (req, res) => {
+  let { id } = req.params;
+  let post = posts.find((p) => id === p.id);
+  res.render("edit.ejs", { post });
+});
+
 
 app.listen(port, () => {
   console.log("listening to port 3000");
