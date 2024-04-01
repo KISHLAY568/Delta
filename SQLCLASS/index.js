@@ -60,6 +60,19 @@ app.get("/", (req, res) => {
   }
 });
 
+app.get("/user", (req, res) => {
+  let q = "SELECT * FROM user";
+  try {
+    connection.query(q, (err, users) => {
+      if (err) throw err;
+      res.render("showUsers.ejs", { users });
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("some error in DB");
+  }
+});
+
 app.listen(4000, () => {
   console.log("server is live on port 4000");
 });
