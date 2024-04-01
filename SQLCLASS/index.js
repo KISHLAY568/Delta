@@ -1,6 +1,7 @@
 const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2");
 const path = require("path");
+const methodOverride = require("method-override");
 const express = require("express");
 const app = express();
 
@@ -42,10 +43,12 @@ let getRandomUser = () => {
 // connection.end();
 
 // console.log(getRandomUser());
-
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
+//home route
 app.get("/", (req, res) => {
   let q = "SELECT count(*) FROM user";
   try {
@@ -60,6 +63,7 @@ app.get("/", (req, res) => {
   }
 });
 
+//show users
 app.get("/user", (req, res) => {
   let q = "SELECT * FROM user";
   try {
@@ -71,6 +75,27 @@ app.get("/user", (req, res) => {
     console.log(err);
     res.send("some error in DB");
   }
+});
+
+//edit route
+app.get("/user/:id/edit", (req, res) => {
+  let { id } = req.params;
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+  try {
+    connection.query(q, (err, result) => {
+      if (err) throw err;
+      let user = result[0];
+      res.render("edit.ejs", { user });
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("some error in DB");
+  }
+});
+
+//update route
+app.patch("/user/:id", (req, res) => {
+  res.send("updated");
 });
 
 app.listen(4000, () => {
