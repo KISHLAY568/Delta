@@ -14,21 +14,32 @@ const bookSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
+    maxLength: 20,
   },
   author: {
     type: String,
   },
   price: {
     type: Number,
+    min: 1,
   },
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  category: {
+    type: String,
+    enum: ["fiction", "non-fiction"],
+  },
+  genre: [String],
 });
 
 const Book = mongoose.model("Book", bookSchema);
 
 let book1 = new Book({
-  title: "How to kill a Mockingbird",
-  author: "Harper Lee",
-  price: "299",
+  title: "Marvel Comics",
+  price: "600",
+  genre: ["comics", "superhero", "fiction"],
 });
 
 book1
@@ -39,5 +50,3 @@ book1
   .catch((err) => {
     console.log(err);
   });
-
-
