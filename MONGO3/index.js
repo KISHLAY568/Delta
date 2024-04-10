@@ -94,6 +94,14 @@ app.put("/chats/:id", async (req, res) => {
   res.redirect("/chats");
 });
 
+//Delete Route
+app.delete("/chats/:id", async (req, res) => {
+  let { id } = req.params;
+  let deletedChat = await Chat.findByIdAndDelete(id);
+  console.log(deletedChat);
+  res.redirect("/chats");
+});
+
 app.listen(3000, () => {
   console.log("server is listening to port 3000");
 });
