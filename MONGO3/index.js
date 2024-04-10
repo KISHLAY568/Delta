@@ -71,6 +71,13 @@ app.post("/chats", (req, res) => {
   res.redirect("/chats");
 });
 
+//Edit Route
+app.get("/chats/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let chat = await Chat.findById(id);
+  res.render("edit.ejs", { chat });
+});
+
 app.listen(3000, () => {
   console.log("server is listening to port 3000");
 });
