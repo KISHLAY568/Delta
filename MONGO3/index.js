@@ -45,6 +45,11 @@ app.get("/chats", async (req, res) => {
   res.render("index.ejs", { chats });
 });
 
+//New Route
+app.get("/chats/new", (req, res) => {
+  res.render("new.ejs");
+});
+
 app.listen(3000, () => {
   console.log("server is listening to port 3000");
 });
