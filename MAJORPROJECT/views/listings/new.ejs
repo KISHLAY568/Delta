@@ -1,12 +1,12 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-8 offset-2">
       <br /><br />
       <h3>Create a New Listing</h3>
       <form action="/listings" method="post">
         <div class="mb-3">
-          <label for="title" class="form-label"></label>
+          <label for="title" class="form-label">Title</label>
           <input
             type="text"
             name="listing[title]"
@@ -62,9 +62,7 @@
           />
         </div>
 
-        <br /><br />
-        <button class="btn btn-dark add-btn">Add</button>
-        <br /><br />
+        <button class="btn btn-dark add-btn mt-3">Add</button>
       </form>
     </div>
   </div>
