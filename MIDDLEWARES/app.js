@@ -15,10 +15,22 @@ const app = express();
 // });
 
 //logger - morgan
-app.use((req, res, next) => {
-  req.time = new Date(Date.now()).toString();
-  console.log(req.method, req.hostname, req.path, req.time);
-  next();
+// app.use((req, res, next) => {
+//   req.time = new Date(Date.now()).toString();
+//   console.log(req.method, req.hostname, req.path, req.time);
+//   next();
+// });
+
+app.use("/api", (req, res, next) => {
+  let { token } = req.query;
+  if (token === "giveaccess") {
+    next();
+  }
+  res.send("ACCESS DENIED!");
+});
+
+app.get("/api", (req, res) => {
+  res.send("data");
 });
 
 app.get("/", (req, res) => {
