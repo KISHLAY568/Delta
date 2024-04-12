@@ -1,16 +1,23 @@
 const express = require("express");
 const app = express();
 
-app.use((req, res, next) => {
-  //   let { query } = req.query;
-  //   console.log(query);
-  console.log("Hi, I am first  Middleware");
-  //   res.send("middleware finished");
-  next();
-});
+// app.use((req, res, next) => {
+//   //   let { query } = req.query;
+//   //   console.log(query);
+//   console.log("Hi, I am first  Middleware");
+//   //   res.send("middleware finished");
+//   next();
+// });
 
+// app.use((req, res, next) => {
+//   console.log("Hi, I am second  Middleware");
+//   next();
+// });
+
+//logger - morgan
 app.use((req, res, next) => {
-  console.log("Hi, I am second  Middleware");
+  req.time = new Date(Date.now()).toString();
+  console.log(req.method, req.hostname, req.path, req.time);
   next();
 });
 
