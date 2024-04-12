@@ -29,6 +29,11 @@ app.get("/random", (req, res) => {
   res.send("this is a random page");
 });
 
+//404
+app.use((req, res) => {
+  res.send("Page not found!");
+});
+
 app.listen(3000, () => {
   console.log("server is listening to port 3000");
 });
