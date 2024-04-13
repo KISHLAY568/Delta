@@ -6,6 +6,7 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const { listingSchema } = require("./schema.js");
 
 const app = express();
 
@@ -75,8 +76,10 @@ app.post(
   wrapAsync(async (req, res, next) => {
     // let {title, description, image, price, country ,location} = req.body;
     // let listing =  req.body.listing;
-    if (!req.body.listing) {
-      throw new ExpressError(400, "send valid data for listing");
+    let result = listingSchema.validate(req.body);
+    console.log(result);
+    if (result.error) {
+      throw new ExpressError(400, result.error);
     }
     const newListing = new Listing(req.body.listing);
     await newListing.save();
@@ -124,7 +127,7 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong" } = err;
-  res.render("error.ejs",{message});
+  res.render("error.ejs", { message });
   // res.status(statusCode).send(message);
 });
 
