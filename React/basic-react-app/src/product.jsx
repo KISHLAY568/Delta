@@ -1,8 +1,8 @@
 import "./Product.css";
 function Product({ title, price, features }) {
   // const list = features.map((feature) => <li>{feature}</li>);
-  let isDiscount = price > 3000;
-  let styles = { backgroundColor: isDiscount ? "pink" : "" };
+  let isDiscount = price > 30000;
+  let styles = { backgroundColor: isDiscount ? "green" : "" };
   return (
     <div className="Product" style={styles}>
       <h3>{title}</h3>
