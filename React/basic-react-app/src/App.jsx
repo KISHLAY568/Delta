@@ -6,6 +6,7 @@ function App() {
   return (
     <>
       <MsgBox username="Kishlay" textcolor="yellow" />
+      <MsgBox username="Kishan" textcolor="lime" />
       <ProductTab />
     </>
   );
