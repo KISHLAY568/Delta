@@ -1,6 +1,8 @@
-export default function Price(){
-    return(<div>
-        <p>old price</p>
-        <p>new price</p>
-    </div>)
+export default function Price({ oldPrice, newPrice }) {
+  return (
+    <div>
+      <p>{oldPrice}</p>
+      <p>{newPrice} </p>
+    </div>
+  );
 }
