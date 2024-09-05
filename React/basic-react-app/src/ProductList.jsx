@@ -1,5 +1,11 @@
 import Product2 from "./Product2";
 function ProductTab() {
+  let styles = {
+    display: "flex",
+    flextWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   return (
     <>
       <Product2 title="Logitech MX Master" idx={0} />
