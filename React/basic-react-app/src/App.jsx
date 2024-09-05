@@ -8,6 +8,7 @@ function App() {
     <>
       {/* <MsgBox username="Kishlay" textcolor="yellow" />
       <MsgBox username="Kishan" textcolor="lime" /> */}
+      <h2>Blockbuster Deals | Shop Now</h2>
       <ProductList />
     </>
   );
