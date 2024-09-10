@@ -1,7 +1,11 @@
+function printHello() {
+  console.log("HELLO!");
+}
+
 export default function Button() {
   return (
     <div>
-      <button>click me!</button>
+      <button onClick={printHello}>click me!</button>
     </div>
   );
 }
