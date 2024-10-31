@@ -3,7 +3,7 @@ import LikeButton from "./LikeButton";
 import "./App.css";
 
 function App() {
-  return <LikeButton />;
+  return <Counter />;
 }
 
 export default App;
